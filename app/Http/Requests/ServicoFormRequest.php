@@ -27,7 +27,7 @@ class ServicoFormRequest extends FormRequest
             'nome'=> 'required|max:80|min:5|unique:servicos,nome',
             'descricao'=>'required|max:200|min:10|',
             'duracao'=>'required|numeric',
-            'preco'=>'required|decimal'
+            'preco'=>'required|decimal:2'
         ];
     }
    public function failedValidation(Validator $validator){

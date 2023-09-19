@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ServicoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -18,3 +19,17 @@ use Illuminate\Support\Facades\Route;
 Route::post('store',[ServicoController::class,'store']);
 
 Route::post('nome', [ServicoController::class, 'pesquisarPorNome']);
+
+Route::delete('remover/{id}', [ServicoController::class, 'excluir']);
+
+Route::post('descricao', [ServicoController::class, 'pesquisarPorDescricao']);
+
+Route::put('update', [ServicoController::class, 'update']);
+
+Route::get('all', [ServicoController::class, 'retornarTodos']);
+
+
+Route::post('store',[ClienteController::class,'store']);
+
+
+
