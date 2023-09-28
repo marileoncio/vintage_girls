@@ -33,4 +33,71 @@ class ClienteController extends Controller
    
            ],200);
        }
-}
+       public function pesquisarPorNome(Request $request)
+    {
+        $clientes = Cliente::where('nome', 'like', '%' . $request->nome . '%')->get();
+        if (count($clientes) > 0) {
+            return response()->json([
+                'status' => true,
+                'data' => $clientes
+            ]);
+        }
+        else{
+            return response()->json([
+                'status' => false,
+                'message' => "Nenhum cliente encontrado"
+            ]);
+        }
+    }
+
+    public function pesquisarPorCpf(Request $request)
+    {
+        $clientes = Cliente::where('cpf', 'like', '%' . $request->cpf . '%')->get();
+        if (count($clientes) > 0) {
+            return response()->json([
+                'status' => true,
+                'data' => $clientes
+            ]);
+        }
+        else{
+            return response()->json([
+                'status' => false,
+                'message' => "CPF não encontrado"
+            ]);
+        }
+    }
+    public function pesquisarCelular(Request $request)
+           {
+               $clientes = Cliente::where('celular', 'like', '%' . $request->celular . '%')->get();
+               if (count($clientes) > 0) {
+                   return response()->json([
+                       'status' => true,
+                       'data' => $clientes
+                   ]);
+               }
+               else{
+                   return response()->json([
+                       'status' => false,
+                       'message' => "Nenhum celular encontrado"
+                   ]);
+               }
+           }
+
+           public function pesquisarEmail(Request $request)
+           {
+               $clientes = Cliente::where('email', 'like', '%' . $request->email . '%')->get();
+               if (count($clientes) > 0) {
+                   return response()->json([
+                       'status' => true,
+                       'data' => $clientes
+                   ]);
+               }
+               else{
+                   return response()->json([
+                       'status' => false,
+                       'message' => "Nenhum e-mail encontrado"
+                   ]);
+               }
+           }
+        }
+
