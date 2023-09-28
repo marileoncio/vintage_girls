@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//rotas do serviços
 Route::post('store',[ServicoController::class,'store']);
 
 Route::post('nome', [ServicoController::class, 'pesquisarPorNome']);
@@ -28,7 +29,7 @@ Route::put('update', [ServicoController::class, 'update']);
 
 Route::get('all', [ServicoController::class, 'retornarTodos']);
 
-
+//rotas do cliete
 Route::post('store',[ClienteController::class,'store']);
 
 
