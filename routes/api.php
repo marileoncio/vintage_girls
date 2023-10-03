@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ProfissionalController;
 use App\Http\Controllers\ServicoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -39,6 +40,19 @@ Route::post('cliente/cpf', [ClienteController::class, 'pesquisarPorCpf']);
 Route::post('cliente/celular', [ClienteController::class, 'pesquisarCelular']);
 
 Route::post('cliente/email', [ClienteController::class, 'pesquisarEmail']);
+
+//rotas do profissional
+Route::post('profissional/store',[ProfissionalController::class,'store']);
+
+Route::post('profissional/nome',[ProfissionalController::class,'pesquisarPorNome']);
+
+Route::post('profissional/cpf',[ProfissionalController::class,'pesquisarCpf']);
+
+Route::post('profissional/celular',[ProfissionalController::class,'pesquisarCelular']);
+
+Route::post('profissional/email',[ProfissionalController::class,'pesquisarEmail']);
+
+
 
 
 
