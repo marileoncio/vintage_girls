@@ -99,5 +99,14 @@ class ClienteController extends Controller
                    ]);
                }
            }
+
+           public function retornarTodos()
+    {
+        $clientes = Cliente::all();
+        return response()->json([
+            'status' => true,
+            'data' => $clientes
+        ]);
+    }
         }
 

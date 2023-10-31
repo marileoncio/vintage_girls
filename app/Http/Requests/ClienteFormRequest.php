@@ -27,7 +27,7 @@ class ClienteFormRequest extends FormRequest
             'nome'=> 'required|max:120|min:5',
             'celular'=>'required|max:11|min:10',
             'email'=>'required|email|max:120',
-            'cpf'=>'required|max:11|min:11',
+            'cpf'=>'unique:clientes,cpf|required|max:11|min:11',
             'dataNascimento'=> 'required',
             'cidade'=>'required|max:120|min:2',
             'estado'=>'required|max:2',
@@ -59,6 +59,7 @@ class ClienteFormRequest extends FormRequest
            'cpf'=>'O campo CPF é obrigatório',
            'cpf.max'=>'O campo cpf deve conter no máximo 11 caracteres',
            'cpf.min'=>'O campo cpf deve conter no mínimo 11 caracteres',
+           'cpf.unique'=>'O campo cpf deve ser único',
            'dataNascimento.required'=>'Data de Nascimento obrigatório',
            'cidade.required'=>'Cidade obrigatório',
            'cidade.max'=>'Cidade deve conter no máximo 120 caracteres',
@@ -74,8 +75,8 @@ class ClienteFormRequest extends FormRequest
            'bairro.required'=>'Bairro é obrigátorio',
            'bairro.max'=>'Bairro deve conter no máximo 100 caracteres',
            'cep.required'=>'CEP é obrigátorio',
-           'cep.max'=>'cpf deve conter no máximo 8 caracteres',
-           'cep.min'=>'O campo cep deve conter no mínimo 8 caracteres',
+           'cep.max'=>'CEP deve conter no máximo 8 caracteres',
+           'cep.min'=>'O campo CEP deve conter no mínimo 8 caracteres',
            'complemento.max'=>'Complemento deve conter no máximo 150 caracteres',
            'senha.required'=>'Senha é obrigátorio'
  ];

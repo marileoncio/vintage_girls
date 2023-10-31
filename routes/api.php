@@ -53,6 +53,8 @@ Route::post('profissional/celular',[ProfissionalController::class,'pesquisarCelu
 Route::post('profissional/email',[ProfissionalController::class,'pesquisarEmail']);
 
 
+Route::get('cliente/all',[ClienteController::class,'retornarTodos']);
+
 
 
 
