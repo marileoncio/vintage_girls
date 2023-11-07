@@ -30,6 +30,11 @@ Route::put('servico/update', [ServicoController::class, 'update']);
 
 Route::get('servico/all', [ServicoController::class, 'retornarTodos']);
 
+Route::post('servico/find{id}', [ServicoController::class, 'pesquisarPorId']);
+
+Route::get('servico/all',[ServicoController::class,'retornarTodos']);
+
+
 //rotas do cliete
 Route::post('cliente/store',[ClienteController::class,'store']);
 
@@ -40,6 +45,12 @@ Route::post('cliente/cpf', [ClienteController::class, 'pesquisarPorCpf']);
 Route::post('cliente/celular', [ClienteController::class, 'pesquisarCelular']);
 
 Route::post('cliente/email', [ClienteController::class, 'pesquisarEmail']);
+
+Route::post('cliente/find{id}',[ClienteController::class,'pesqusarPorId']);
+
+Route::put('cliente/update', [ClienteController::class, 'update']);
+
+Route::get('cliente/all',[ClienteController::class,'retornarTodos']);
 
 //rotas do profissional
 Route::post('profissional/store',[ProfissionalController::class,'store']);
@@ -52,8 +63,11 @@ Route::post('profissional/celular',[ProfissionalController::class,'pesquisarCelu
 
 Route::post('profissional/email',[ProfissionalController::class,'pesquisarEmail']);
 
+Route::get('profissional/all',[ProfissionalController::class,'retornarTodos']);
 
-Route::get('cliente/all',[ClienteController::class,'retornarTodos']);
+Route::post('profissional/find{id}',[ProfissionalController::class,'pesqusarPorId']);
+
+Route::put('profissional/update', [ProfissionalController::class, 'update']);
 
 
 
