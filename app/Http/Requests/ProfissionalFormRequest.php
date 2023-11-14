@@ -43,7 +43,7 @@ class ProfissionalFormRequest extends FormRequest
     }
     public function failedValidation(Validator $validator){
         throw new HttpResponseException(response()->json([
-           'success'=>true,
+           'success'=>false,
            'error'=>$validator->errors()
         ]));
       }
