@@ -22,7 +22,7 @@ Route::post('servico/store',[ServicoController::class,'store']);
 
 Route::post('servico/nome', [ServicoController::class, 'pesquisarPorNome']);
 
-Route::delete('servico/remover/{id}', [ServicoController::class, 'excluir']);
+Route::delete('servico/excluir/{id}', [ServicoController::class, 'excluir']);
 
 Route::post('servico/descricao', [ServicoController::class, 'pesquisarPorDescricao']);
 
@@ -52,6 +52,8 @@ Route::put('cliente/update', [ClienteController::class, 'update']);
 
 Route::get('cliente/all',[ClienteController::class,'retornarTodos']);
 
+Route::delete('cliente/excluir/{id}',[ClienteController::class,'excluir']);
+
 //rotas do profissional
 Route::post('profissional/store',[ProfissionalController::class,'store']);
 
@@ -68,6 +70,8 @@ Route::get('profissional/all',[ProfissionalController::class,'retornarTodos']);
 Route::get('profissional/find/{id}',[ProfissionalController::class,'pesquisarPorId']);
 
 Route::put('profissional/update', [ProfissionalController::class, 'update']);
+
+Route::delete('profissional/excluir/{id}', [ProfissionalController::class, 'excluir']);
 
 
 

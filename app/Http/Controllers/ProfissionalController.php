@@ -191,7 +191,27 @@ class profissionalController extends Controller
         ]);
    
     }
+    public function excluir($id){
+        $profissional =profissional::find($id);
+   
+        if(!isset($profissional)){
+            return response()->json([
+                'status'=>false,
+                'message'=> "Profissional não encontrado"
+           
+            ]);
+        }
+
+        $profissional->delete();
+        return response()->json([
+            'status'=>true,
+            'message'=>"Profissional excluído com sucesso"
+        ]);
+   
+        }
 }
+
+
 
 
 

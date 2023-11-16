@@ -73,7 +73,7 @@ class ServicoController extends Controller
                 'message' => 'Serviço não atualizado'
             ]);
         }
-        
+
         if (isset($request->nome)) {
             $servicos->nome = $request->nome;
         }
@@ -95,27 +95,27 @@ class ServicoController extends Controller
         ]);
     }
 
-    public function retornarTodos(){
+    public function retornarTodos()
+    {
         $servicos = Servicos::all();
         return response()->json([
-            'status'=> true,
-            'data'=> $servicos
+            'status' => true,
+            'data' => $servicos
         ]);
     }
 
-    public function pesquisarPorId($id){
+    public function pesquisarPorId($id)
+    {
         $servico = Servicos::find($id);
-        if($servico == null){
-           return response()->json([
-            'status'=> false,
-            'message'=> "Serviço não encontrado"
-           ]);
+        if ($servico == null) {
+            return response()->json([
+                'status' => false,
+                'message' => "Serviço não encontrado"
+            ]);
         }
         return response()->json([
-            'status'=> true,
-            'data'=> $servico
+            'status' => true,
+            'data' => $servico
         ]);
+    }
 }
-}
-
-
