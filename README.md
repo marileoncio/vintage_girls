@@ -15,3 +15,5 @@ COMANDOS CMD
 ### `git config --global user.name "marileoncio"`
 
 ### `git config --global user.email "mariana.timoteo19@yahoo.com"`
+
+### `php artisan serve`
