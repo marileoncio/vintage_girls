@@ -202,6 +202,26 @@ public function excluir($id){
     ]);
 
     }
+
+    public function recuperarSenha(Request $request)
+    {
+
+        $cliente = Cliente::where('cpf', '=', $request->cpf)->first();
+
+        if (!isset($cliente)) {
+            return response()->json([
+                'status' => false,
+                'data' => "cliente não encontrado"
+
+            ]);
+        }
+
+        return response()->json([
+            'status' => true,
+            'password' => Hash::make($cliente->cpf)
+        ]);
+
+    }
 }
 
 

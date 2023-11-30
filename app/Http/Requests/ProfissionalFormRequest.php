@@ -26,7 +26,7 @@ class ProfissionalFormRequest extends FormRequest
         return [
             'nome'=> 'required|max:120|min:5|',
             'celular'=>'required|max:11|min:10|',
-            'email'=>'required|e-mail|max:120|',
+            'email'=>'required|email|max:120|',
             'cpf'=>'required|max:11|min:11',
             'dataNascimento'=>'required',
             'cidade'=> 'required|max:120|',
@@ -51,7 +51,7 @@ class ProfissionalFormRequest extends FormRequest
        return [
            'nome.required'=>'O campo nome é obrigatório',
            'nome.max'=>'O campo nome deve conter no máximo 120 caracteres',
-           'nome.max'=>'O campo nome deve conter no mínimo 5 caracteres',
+           'nome.min'=>'O campo nome deve conter no mínimo 5 caracteres',
 
            'celular.required'=>'o campo celular é obrigatório',
            'celular.max'=>'celular deve conter no máximo 11 caracteres',

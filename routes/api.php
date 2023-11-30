@@ -3,6 +3,7 @@
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ProfissionalController;
 use App\Http\Controllers\ServicoController;
+use App\Http\Controllers\AgendaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -54,6 +55,9 @@ Route::get('cliente/all',[ClienteController::class,'retornarTodos']);
 
 Route::delete('cliente/excluir/{id}',[ClienteController::class,'excluir']);
 
+Route::put('cliente/senha',[ClienteController::class,'recuperarSenha']);
+
+
 //rotas do profissional
 Route::post('profissional/store',[ProfissionalController::class,'store']);
 
@@ -72,6 +76,18 @@ Route::get('profissional/find/{id}',[ProfissionalController::class,'pesquisarPor
 Route::put('profissional/update', [ProfissionalController::class, 'update']);
 
 Route::delete('profissional/excluir/{id}', [ProfissionalController::class, 'excluir']);
+
+Route::get('profissional/senha',[ProfissionaisController::class,'recuperarSenha']);
+
+
+//rota agenda
+Route::post('agenda/store',[AgendaController::class,'store']);
+
+Route::get('agenda/find/{id}',[AgendaController::class,'pesquisarPorId']);
+
+Route::delete('agenda/excluir/{id}',[AgendaController::class,'excluir']);
+
+Route::get('agenda/all',[AgendaController::class,'retornarTodos']);
 
 
 

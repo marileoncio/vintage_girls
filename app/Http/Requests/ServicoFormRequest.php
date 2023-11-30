@@ -41,10 +41,13 @@ class ServicoFormRequest extends FormRequest
         'nome.required'=>'O campo nome é obrigatório',
         'nome.max'=>'O campo nome deve conter no máximo 80 caracteres',
         'nome.max'=>'O campo nome deve conter no mínimo 5 caracteres',
+
         'descricao.required'=>'descricao obrigatório',
         'descricao.max'=>'Descrição deve conter no máximo 200 caracteres',
         'descricao.min'=>'Descrição deve conter no mínimo 10 caracteres',
+
         'duracao.required'=>'Duração obrigátorio',
+        
         'preco.required'=>'Preço obrigátorio'
     ];
 }

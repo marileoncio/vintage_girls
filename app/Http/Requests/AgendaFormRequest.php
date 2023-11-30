@@ -25,9 +25,9 @@ class AgendaFormRequest extends FormRequest
     {
         return [
             'profissional_id' => 'required',
-            'clinte_id' => 'required',
+            'cliente_id' => 'required',
             'servico_id' => 'required',
-            'data_hora' => 'required',
+            'data_hora' => 'required|date',
             'tipo_pagamento' => 'required|max: 20|min: 3',
             'valor' => 'required'
         ];
@@ -40,8 +40,10 @@ class AgendaFormRequest extends FormRequest
       }
       public function messages(){
        return [
-        'profissional.required'=>'O campo nome é obrigatorio',
+        'profissional_id.required'=>'O campo nome é obrigatorio',
         'data_hora.required'=>'O campo data/hora é obrigatorio',
+        'data_hora.date' => "O campo data e hora deverá conter apenas datas e horários",
+        'cliente_id.required'=> 'O campo cliente é obrigatório',
         'tipo_pagamento.required'=>'O campo tipo de pagamento é obrigatorio',
         'tipo_pagamento.max'=>'O maximo é 20 caracteres',
         'tipo_pagamento.min'=>'É obrigatorio no minimo 3 caracteres',

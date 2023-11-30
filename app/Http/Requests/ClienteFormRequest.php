@@ -24,7 +24,7 @@ class ClienteFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nome'=> 'required|max:120|min:5',
+            'nome'=> 'required|min:5|max:120',
             'celular'=>'required|max:11|min:10',
             'email'=>'unique:clientes,email|required|email|max:120',
             'cpf'=>'unique:clientes,cpf|required|max:11|min:11',
@@ -49,35 +49,49 @@ class ClienteFormRequest extends FormRequest
       public function messages(){
        return [
            'nome.required'=>'O campo nome é obrigatório',
-           'nome.max'=>'O campo nome deve conter no máximo 120 caracteres',
            'nome.min'=>'O campo nome deve conter no mínimo 5 caracteres',
+           'nome.max'=>'O campo nome deve conter no máximo 120 caracteres',
+
            'celular.required'=>'Celular obrigatório',
            'celular.max'=>'Celular deve conter no máximo 11 caracteres',
            'celular.min'=>'Celular deve conter no mínimo 10 caracteres',
-           'e-mail.required'=>'E-mail obrigátorio',
-           'e-mail.max'=>'E-mail deve conter no máximo 120 caracteres',
+
+           'email.required'=>'E-mail obrigátorio',
+           'email.max'=>'E-mail deve conter no máximo 120 caracteres',
+
            'cpf'=>'O campo CPF é obrigatório',
            'cpf.max'=>'O campo cpf deve conter no máximo 11 caracteres',
            'cpf.min'=>'O campo cpf deve conter no mínimo 11 caracteres',
            'cpf.unique'=>'O campo cpf deve ser único',
+
            'dataNascimento.required'=>'Data de Nascimento obrigatório',
+
            'cidade.required'=>'Cidade obrigatório',
            'cidade.max'=>'Cidade deve conter no máximo 120 caracteres',
            'cidade.min'=>'Cidade deve conter no mínimo 2 caracteres',
+
            'estado.required'=>'Estado é obrigatório',
            'estado.max'=>'O campo estado deve conter no máximo 2 caracteres',
+
            'pais.required'=>'país obrigatório',
            'pais.max'=>'País deve conter no máximo 80 caracteres',
+
            'rua.required'=>'Rua obrigátorio',
            'rua.max'=>'rua deve conter no máximo 120 caracteres',
+           
            'numero.required'=>'Número é obrigátorio',
            'numero.max'=>'Número deve conter no máximo 10 caracteres',
+
            'bairro.required'=>'Bairro é obrigátorio',
            'bairro.max'=>'Bairro deve conter no máximo 100 caracteres',
+
            'cep.required'=>'CEP é obrigátorio',
            'cep.max'=>'CEP deve conter no máximo 8 caracteres',
+
            'cep.min'=>'O campo CEP deve conter no mínimo 8 caracteres',
+
            'complemento.max'=>'Complemento deve conter no máximo 150 caracteres',
+           
            'senha.required'=>'Senha é obrigátorio'
  ];
     
