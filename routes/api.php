@@ -54,6 +54,8 @@ Route::get('cliente/all',[ClienteController::class,'retornarTodos']);
 
 Route::delete('cliente/excluir/{id}',[ClienteController::class,'excluir']);
 
+Route::post('cliente/senha',[ClienteController::class,'recuperar']);
+
 //rotas do profissional
 Route::post('profissional/store',[ProfissionalController::class,'store']);
 
@@ -72,6 +74,9 @@ Route::get('profissional/find/{id}',[ProfissionalController::class,'pesquisarPor
 Route::put('profissional/update', [ProfissionalController::class, 'update']);
 
 Route::delete('profissional/excluir/{id}', [ProfissionalController::class, 'excluir']);
+
+Route::post('profissional/senha', [ProfissionalController::class, 'recuperar']);
+
 
 
 

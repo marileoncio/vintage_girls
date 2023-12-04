@@ -170,7 +170,7 @@ class profissionalController extends Controller
        }
    
        public function retornarTodos(){
-           $profissional = profissional::all();
+           $profissional = Profissional::all();
            return response()->json([
                'status'=> true,
                'data'=> $profissional
@@ -178,7 +178,7 @@ class profissionalController extends Controller
        }
 
        public function pesquisarPorId($id){
-        $profissional = profissional::find($id);
+        $profissional = Profissional::find($id);
         if($profissional == null){
            return response()->json([
             'status'=> false,
@@ -192,7 +192,7 @@ class profissionalController extends Controller
    
     }
     public function excluir($id){
-        $profissional =profissional::find($id);
+        $profissional =Profissional::find($id);
    
         if(!isset($profissional)){
             return response()->json([
@@ -208,7 +208,27 @@ class profissionalController extends Controller
             'message'=>"Profissional excluído com sucesso"
         ]);
    
+     }
+
+     public function recuperarSenha(Request $request)
+    {
+
+        $profissional = Profissional::where('email', '=', $request->email)->first();
+
+        if (!isset($profissional)) {
+            return response()->json([
+                'status' => false,
+                'data' => "Profissional não encontrado"
+
+            ]);
         }
+
+        return response()->json([
+            'status' => true,
+            'password' => Hash::make($profissional->cpf)
+        ]);
+
+    }
 }
 
 

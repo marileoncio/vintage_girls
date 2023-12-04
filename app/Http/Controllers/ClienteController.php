@@ -171,7 +171,7 @@ class ClienteController extends Controller
            ]);
        }
        public function pesquisarPorId($id){
-        $cliente = cliente::find($id);
+        $cliente = Cliente::find($id);
         if($cliente == null){
            return response()->json([
             'status'=> false,
@@ -202,7 +202,27 @@ public function excluir($id){
     ]);
 
     }
+    public function recuperarSenha(Request $request)
+    {
+
+        $clientes = Cliente::where('email', '=', $request->email)->first();
+
+        if (!isset($clientes)) {
+            return response()->json([
+                'status' => false,
+                'data' => "Cliente não encontrado"
+
+            ]);
+        }
+
+        return response()->json([
+            'status' => true,
+            'password' => Hash::make($clientes->cpf)
+        ]);
+
+    }
 }
+
 
 
 
