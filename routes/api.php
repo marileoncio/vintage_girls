@@ -77,7 +77,7 @@ Route::put('profissional/update', [ProfissionalController::class, 'update']);
 
 Route::delete('profissional/excluir/{id}', [ProfissionalController::class, 'excluir']);
 
-Route::put('profissional/senha',[ProfissionaisController::class,'recuperarSenha']);
+Route::put('profissional/senha',[ProfissionalController::class,'recuperarSenha']);
 
 
 //rota agenda

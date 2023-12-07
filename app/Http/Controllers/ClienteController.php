@@ -203,18 +203,19 @@ class ClienteController extends Controller
 
     public function recuperarSenha(Request $request)
     {
-
-        $cliente = Cliente::where('cpf', '=', $request->cpf)->first();
+        $cliente = Cliente::where('email', '=', $request->email)->first();
 
         if (!isset($cliente)) {
             return response()->json([
                 'status' => false,
-                'data' => "cliente não encontrado"
+                'data' => "Cliente não encontrado"
 
             ]);
         }
-        $cliente->update();
         $cliente->senha = Hash::make($cliente->cpf);
+        
+        $cliente->update();
+
         return response()->json([
             'status' => true,
             'password' => "Senha alterada com sucesso"

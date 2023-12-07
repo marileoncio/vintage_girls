@@ -211,7 +211,7 @@ class profissionalController extends Controller
     public function recuperarSenha(Request $request)
     {
 
-        $profissional = Profissional::where('cpf', '=', $request->cpf)->first();
+        $profissional = Profissional::where('email', '=', $request->email)->first();
 
         if (!isset($profissional)) {
             return response()->json([
@@ -221,8 +221,9 @@ class profissionalController extends Controller
             ]);
         }
 
-        $profissional->update();
+        
         $profissional->senha = Hash::make($profissional->cpf);
+        $profissional->update();
         return response()->json([
             'status' => true,
             'password' => "Senha alterada com sucesso"
