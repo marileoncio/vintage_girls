@@ -93,7 +93,7 @@ class ProfissionalFormRequest extends FormRequest
 
            'senha.required'=>'o campo senha é obrigatório',
 
-           'salario.required'=>'o campo senha é obrigatório',
+           'salario.required'=>'o campo salário é obrigatório',
 
 
         ];
